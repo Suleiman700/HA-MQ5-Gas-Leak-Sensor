@@ -7,8 +7,8 @@ This repository contains the necessary code to integrate an MQ-5 gas leak sensor
 
 ## Table of Contents
 1. [ESP32 Code](#esp32-code)
-2. [Home Assistant Integration](#home-assistant-integration)
-3. [Endpoints](#endpoints)
+2. [Endpoints](#endpoints)
+3. [Home Assistant Integration](#home-assistant-integration)
 
 ## ESP32 Code
 
