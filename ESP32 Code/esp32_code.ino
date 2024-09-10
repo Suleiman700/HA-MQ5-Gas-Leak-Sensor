@@ -4,6 +4,7 @@
 // Replace with your network credentials
 const char* ssid = "<WIFI>";
 const char* password = "<PASSWORD>";
+const char* MyHostName = "ESP32 - Gas Sensor";
 
 // Create an instance of the server
 WebServer server(80);
@@ -21,6 +22,7 @@ float analogToPPM(int analogValue) {
 
 void connectToWiFi() {
   Serial.print("Connecting to WiFi...");
+  WiFi.setHostname(MyHostName);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
