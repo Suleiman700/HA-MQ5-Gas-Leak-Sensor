@@ -1,6 +1,6 @@
 substitutions:
-  name: esphome-mq5-gas-2-982a40
-  friendly_name: ESPHome MQ-5 Gas Sensor 2
+  name: mq5-gas-sensor-1
+  friendly_name: MQ-5 Gas Sensor 1
 
 esphome:
   name: ${name}
@@ -45,14 +45,13 @@ esp32_improv:
 # To have a "next url" for improv serial
 web_server:
 
-# MQ-5 Gas Sensor configuration using analog pin
+# DIY MQ-2 Smoke & Gas Sensor for Home Assistant
 sensor:
   - platform: adc
-    pin: 35
-    name: "MQ-5 Gas Sensor 2"
-    id: mq5_gas_sensor_2
+    pin: GPIO35
+    name: "MQ-5 Gas Sensor 1"
     update_interval: 10s
     filters:
-      - lambda: |-
-          return x / 4095.0 * 1000.0;    
-    unit_of_measurement: ""
+      - multiply: 100
+    unit_of_measurement: "%"
+    icon: "mdi:percent"
